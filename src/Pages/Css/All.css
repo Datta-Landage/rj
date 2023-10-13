@@ -1,0 +1,200 @@
+*{
+    font-family: 'Archivo', sans-serif;
+    color: #2f2f30;
+}
+
+.header-cid{
+    background-color: #38349F;
+    height: 70px;
+    padding: 0 10%;
+    box-shadow: rgba(166, 191, 255, 0.2) 0px 8px 24px;
+}
+
+.header-cid p{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+
+/* body h2 {
+    font-weight: 300;
+    color: #38349F;
+ } */
+/* body h6 {
+    font-weight: 200;
+    color: #38349F;
+}
+body h5 {
+    color: #38349F;
+    font-weight: 100;
+
+} */
+
+body h4 {
+    color: #a6a6e8;
+}
+
+
+ 
+.cid-box{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgba(166, 191, 255, 0.2) 0px 8px 24px;
+}
+
+.cid-label{
+    color: #38349F;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-control:focus,.form-control:active,.form-control:hover {
+    box-shadow: none;
+    border-color: #4039DB;
+ }
+
+ .btn-primary-cidblue {
+    background-color: #4039DB;
+    color: #ffffff;
+    border-color: #4039DB;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-primary-cidblue:hover {
+    background-color: #5858E8;
+    color: #ffffff;
+    border-color: #5858E8;
+    border-style: solid;
+}
+
+.btn-secondary-cidblue {
+    border:1px solid #150e99;
+    background-color: #150e99;
+    color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-second-cidblue {
+    background-color: #ffffff;
+    color: #4039DB;
+    border: 1px solid #4039DB;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-secondary-cidblue:hover ,
+.btn-second-cidblue:hover  {
+    background-color: #5858E8;
+    color: #ffffff;
+    border-color: #5858E8;
+    display: flex;
+    justify-content: flex-start;
+    border-style: solid;
+}
+
+.btn-primary-cidyellow {
+    background-color: #ffce00;
+    color: #242424;
+    border-color: #ffce00;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-primary-cidyellow:hover {
+    background-color: #FFDC6C;
+    color: #242424;
+    border-color: #FFDC6C;
+}
+
+.btn-primary-cidwhite {
+    color: #ffffff;
+    border-color: #4039DB;
+    border: 1px solid ;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-primary-cidwhite:hover {
+    background-color: #4039DB;
+    color: #ffffff;
+    border-color: #4039DB;
+}
+
+.btn-secondary-cidblue {
+    background-color: #ffffff;
+    color: #4039DB;
+    border-color: #4039DB;
+    border: 1px solid ;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-secondary-cidblue:hover {
+    background-color: #5858E8;
+    color: #ffffff;
+    border-color: #5858E8;
+}
+
+.candidatecard-summary{
+    background-color: #F5F5FF;
+    border-color: #DDDBFF;
+    margin-top: 10px;
+    overflow: hidden;
+    }
+
+.candidatecard-summary-text {
+    color: #1E1E1E;
+    font-size: 12px;
+    margin: 10px;
+    height: 94px;
+    overflow: hidden;
+}
+
+.candidatecard{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgba(166, 191, 255, 0.2) 0px 8px 24px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.summary-box {
+    background-color: #efeff4;
+}
+
+
+@media (max-width: 630px) {
+    .smallLogo {
+      display: block;
+    }
+
+    .largeLogo {
+        display: none !important;
+    }
+
+    .VanisButton {
+        display: none !important;
+    }
+  }
+  
+  @media (min-width: 630px) {
+    .smallLogo {
+      display: none;
+    }
+  }

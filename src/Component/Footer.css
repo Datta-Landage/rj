@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #eef8ff;
+  }
+  
+  footer {
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #2f40ac, #70402f);
+    color: #fff;
+    padding: 70px 30px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  footer img {
+    height: 70px;
+    width: 70px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    font-size: larger;
+    margin-right: 5%;
+  }
+  
+  .foterhd{
+    display: flex;
+    margin: 0 10%;
+    width: 60%;
+    font-size: larger;
+  }
+  .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  .col {
+    flex-basis: 25%;
+    padding: 10px;
+  }
+  
+  .col:nth-child(2),
+  .col:nth-child(3) {
+    flex-basis: 15%;
+    padding: 10px;
+  }
+  
+  .col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    position: relative;
+  }
+  
+  .email-id {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
+  ul li {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .formFooter {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .formFooter .far {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .formFooter input {
+    width: 100%;
+    background: #b0b483;
+    color: #6158c8;
+    border: 2px solid rgb(31, 31, 86);
+    border-width: 5px;
+    border-radius: 0px 20px;
+    padding: 8px;
+    outline: none;
+    margin-right: 10px;
+  }
+  
+  .formFooter button {
+    width: 111px;
+    background: #b0b483;
+    color: #6158c8;
+    border: 2px solid rgb(31, 31, 86);
+    border-width: 5px;
+    border-radius: 20px 0px;
+    padding: 8px;
+    outline: none;
+    margin-right: 10px;
+  }
+  
+  .social-icons .fab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-style: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+  }
+  
+  .copyRight {
+    text-align: right;
+    margin-right: 150px;
+  }
+  

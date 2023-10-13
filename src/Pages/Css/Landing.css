@@ -1,0 +1,60 @@
+.body {
+    margin: 0 100px;
+    padding: 50px 0;
+    width: 60%;
+    font-family: 'archivo';
+    color: #2f2f30;
+
+}
+
+
+/* //////////////////search/////////////// */
+.search-div {
+    margin: 50px 0;
+}
+.search-div input{
+    width: 86%;
+    background-color: white;
+    height: 50px;
+}
+.search-div button {
+    background-color: red;
+    color: white;
+    height: 50px;
+    padding: 0 5px;
+}
+
+/* ////////////////header/////////////// */
+.header-one {
+    margin-top: 100px;
+    padding: 0 8%;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    background-color: blue;
+}
+
+.header-content {
+    color:  white;
+    align-items: center;
+}
+
+/* ////////////candidate body/////////// */
+.data-body {
+    margin: 50px 0;
+}
+
+
+.candidates {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.candidate-box {
+    width: 32%;
+    /* border: 2px solid green; */
+}

@@ -1,0 +1,15 @@
+export const ROUTES = {
+  LANDING: "/",
+  SIGN_UP: "/signup",
+  SIGN_IN: "/signin",
+  CHANGE_PASSWORD: "/changepassword",
+  RESET_PASSWORD: "/resetpassword",
+  MY_ACCOUNT: "/myaccount",
+  PROFILE: "/profile",
+  JOBS: "/jobs",
+  ALL_JOBS: "/alljobs",
+  ALL_CANDIDATES: "/allcandidates",
+  CALENDAR: "/calender",
+  MESSAGES: "/messages",
+  NOT_FOUND: "/*",
+};
