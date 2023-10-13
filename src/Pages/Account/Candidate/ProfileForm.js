@@ -282,17 +282,14 @@ function CandidateProfile({ data }) {
       localStorage.setItem("candidateProfile", JSON.stringify(data));
       console.warn(data);
 
-      const response = await fetch(
-        `https://api-backend-plum.vercel.app/createProfile`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`https://it-eta.vercel.app/createProfile`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       console.warn("In response");
 
       if (response.ok) {

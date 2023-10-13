@@ -47,7 +47,7 @@ function CompanyProfile() {
   async function getUserAccountInfo() {
     try {
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/getProfileById/${userId}`,
+        `https://it-eta.vercel.app/getProfileById/${userId}`,
         {
           method: "GET",
           headers: {
@@ -94,7 +94,7 @@ function CompanyProfile() {
   async function getCompanyData() {
     try {
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/getCompanyProfile/${recruiterId}`,
+        `https://it-eta.vercel.app/getCompanyProfile/${recruiterId}`,
         {
           method: "GET",
           headers: {
@@ -155,7 +155,7 @@ function CompanyProfile() {
       formData.append("companyPhoto", selectedImage);
 
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/companyProfile/${recruiterId}`,
+        `https://it-eta.vercel.app/companyProfile/${recruiterId}`,
         {
           method: "POST",
           body: formData,

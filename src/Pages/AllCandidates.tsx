@@ -101,16 +101,13 @@ const AllCandidatesData = () => {
 
   async function showAllcandidates() {
     try {
-      const response = await fetch(
-        `https://api-backend-plum.vercel.app/getAllProfiles`,
-        {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`https://it-eta.vercel.app/getAllProfiles`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
       if (response.ok) {
         const candidatesData = await response.json();
         console.warn(candidatesData?.data);

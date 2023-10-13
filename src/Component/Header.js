@@ -45,7 +45,7 @@ function Header() {
   async function getUserAccountInfo() {
     try {
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/userAccount/${userId}`,
+        `https://it-eta.vercel.app/userAccount/${userId}`,
         {
           method: "GET",
           headers: {

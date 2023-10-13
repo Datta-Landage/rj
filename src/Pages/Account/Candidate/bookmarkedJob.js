@@ -22,7 +22,7 @@ const BookmarkedJobs = () => {
   async function showAllJobs() {
     try {
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/bookmarkedJobs/${candidateId}`,
+        `https://it-eta.vercel.app/bookmarkedJobs/${candidateId}`,
         {
           method: "GET",
           headers: {
@@ -52,7 +52,7 @@ const BookmarkedJobs = () => {
     try {
       let data = { jobPostId: jobDataId };
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/jobApply/${candidateId}`,
+        `https://it-eta.vercel.app/jobApply/${candidateId}`,
         {
           method: "POST",
           headers: {
@@ -108,7 +108,7 @@ const BookmarkedJobs = () => {
     try {
       let data = { jobPostId: jobDataId };
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/bookmarkJobPost/${candidateId}`,
+        `https://it-eta.vercel.app/bookmarkJobPost/${candidateId}`,
         {
           method: "POST",
           headers: {

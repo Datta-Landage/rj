@@ -40,17 +40,14 @@ function SignIn() {
       console.warn({ email, password });
       let data = { email, password };
 
-      const response = await fetch(
-        `https://api-backend-plum.vercel.app/signIn`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`https://it-eta.vercel.app/signIn`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         const apiData = await response.json();

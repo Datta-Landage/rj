@@ -43,17 +43,14 @@ function SignUp() {
       console.warn({ accountType, email, password, repassword });
       let data = { accountType, email, password, repassword };
 
-      const response = await fetch(
-        `https://api-backend-plum.vercel.app/signUp`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`https://it-eta.vercel.app/signUp`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         toast.success(

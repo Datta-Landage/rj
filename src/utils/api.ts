@@ -10,9 +10,9 @@ const API_HOST = process.env.REACT_APP_API_HOST;
 
 export const API = {
   getMessages: (userId: string) =>
-    `https://api-backend-plum.vercel.app/messages/${userId}`,
+    `https://it-eta.vercel.app/messages/${userId}`,
   sendMessage: (userId: string) =>
-    `https://api-backend-plum.vercel.app/messages/${userId}`,
+    `https://it-eta.vercel.app/messages/${userId}`,
   getUserInfo: (userId: string) =>
-    `https://api-backend-plum.vercel.app/userAccount/${userId}`,
+    `https://it-eta.vercel.app/userAccount/${userId}`,
 };

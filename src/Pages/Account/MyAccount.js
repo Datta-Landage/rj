@@ -83,7 +83,7 @@ const MyAccount = () => {
       formData.append("image", file);
 
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/saveRecruiterPhoto/${userId}`,
+        `https://it-eta.vercel.app/saveRecruiterPhoto/${userId}`,
         {
           method: "POST",
           body: formData,
@@ -115,7 +115,7 @@ const MyAccount = () => {
     try {
       console.log("userId", userId);
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/userAccount/${userId}`,
+        `https://it-eta.vercel.app/userAccount/${userId}`,
         {
           method: "GET",
           headers: {
@@ -174,7 +174,7 @@ const MyAccount = () => {
       };
 
       const response = await fetch(
-        `https://api-backend-plum.vercel.app/updateUser/${candidateId}`,
+        `https://it-eta.vercel.app/updateUser/${candidateId}`,
         {
           method: "PUT",
           headers: {
