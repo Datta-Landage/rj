@@ -139,12 +139,8 @@ function LandingPage() {
       <div className="tw-w-64 tw-h-64 tw-z-0 tw-bg-yellow-500 tw-blur-[120px] tw-rounded-full tw-min-h-max tw-min-w-max tw-absolute tw-top-24 tw-left-16"></div> */}
 
       <div className="container">
-        <div
-          className="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-dark bg-secondary"
-          style={{ height: "240px" }}
-        >
-          {/* <img src={landingBanner1}  /> */}
-          {/* <h1 class="mb-3 h2">Jumbotron</h1> */}
+        <div className="my-2">
+          <img src={Banner1} style={{ width: "100%" }} />
         </div>
 
         <div className="data-body">
