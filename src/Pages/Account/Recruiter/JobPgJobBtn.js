@@ -47,7 +47,7 @@ function JobBtn() {
     console.warn(recruiterId);
     try {
       const response = await fetch(
-        `http://localhost:4000/getJob/${recruiterId}`,
+        `https://api-backend-plum.vercel.app/getJob/${recruiterId}`,
         {
           method: "GET",
           headers: {
@@ -88,14 +88,17 @@ function JobBtn() {
         companyId,
       };
       console.warn(data);
-      const response = await fetch(`http://localhost:4000/createJob`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/createJob`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         alert("Job Posted Successfully");

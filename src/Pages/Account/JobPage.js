@@ -27,7 +27,7 @@ function Jobs() {
   async function getApplyPost() {
     try {
       const response = await fetch(
-        `http://localhost:4000/getAllJobs/${userId}`,
+        `https://api-backend-plum.vercel.app/getAllJobs/${userId}`,
         {
           method: "GET",
           headers: {
@@ -50,7 +50,7 @@ function Jobs() {
   async function getBookMarkedPost() {
     try {
       const response = await fetch(
-        `http://localhost:4000/bookmarkedJobs/${userId}`,
+        `https://api-backend-plum.vercel.app/bookmarkedJobs/${userId}`,
         {
           method: "GET",
           headers: {

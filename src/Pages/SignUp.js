@@ -43,14 +43,17 @@ function SignUp() {
       console.warn({ accountType, email, password, repassword });
       let data = { accountType, email, password, repassword };
 
-      const response = await fetch(`http://localhost:4000/signUp`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/signUp`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         toast.success(
@@ -82,7 +85,6 @@ function SignUp() {
     setAccountType(newAccountType);
   };
 
-
   //------------------------------------Login with google-------------------------------------------\\
   const handleGoogleLogin = async () => {
     try {
@@ -96,10 +98,9 @@ function SignUp() {
         );
       } else {
         console.error("Login failed");
-        toast.warning ("Login failed",
-        {
-          position: "top-center"
-        })
+        toast.warning("Login failed", {
+          position: "top-center",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
@@ -120,18 +121,16 @@ function SignUp() {
         );
       } else {
         console.error("Login failed");
-        toast.warning ("Login failed",
-        {
-          position: "top-center"
-        })
+        toast.warning("Login failed", {
+          position: "top-center",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
-
-//---------------------------------------------------------------------------------------\\
+  //---------------------------------------------------------------------------------------\\
   return (
     <Layout title={"SignUp Page"}>
       <div className="d-flex justify-content-center">
@@ -261,11 +260,11 @@ function SignUp() {
               </form>
               <p className="my-3">or sign up with</p>
               <div className="signing-options d-flex justify-content-between">
-                <button id="sign-option"
-                onClick={handleMicrosoftLogin}>Microsoft
+                <button id="sign-option" onClick={handleMicrosoftLogin}>
+                  Microsoft
                 </button>
-                <button id="sign-option"
-                onClick={handleGoogleLogin}>Google
+                <button id="sign-option" onClick={handleGoogleLogin}>
+                  Google
                 </button>
               </div>
             </div>

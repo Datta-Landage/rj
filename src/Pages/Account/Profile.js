@@ -47,7 +47,7 @@ function CompanyProfile() {
   async function getUserAccountInfo() {
     try {
       const response = await fetch(
-        `http://localhost:4000/getProfileById/${userId}`,
+        `https://api-backend-plum.vercel.app/getProfileById/${userId}`,
         {
           method: "GET",
           headers: {
@@ -94,7 +94,7 @@ function CompanyProfile() {
   async function getCompanyData() {
     try {
       const response = await fetch(
-        `http://localhost:4000/getCompanyProfile/${recruiterId}`,
+        `https://api-backend-plum.vercel.app/getCompanyProfile/${recruiterId}`,
         {
           method: "GET",
           headers: {
@@ -155,7 +155,7 @@ function CompanyProfile() {
       formData.append("companyPhoto", selectedImage);
 
       const response = await fetch(
-        `http://localhost:4000/companyProfile/${recruiterId}`,
+        `https://api-backend-plum.vercel.app/companyProfile/${recruiterId}`,
         {
           method: "POST",
           body: formData,
@@ -287,7 +287,9 @@ function CompanyProfile() {
                     <form className="mt-3 bodyAll" onSubmit={saveCompanyData}>
                       <div className="d-flex justify-content-between">
                         <div className="my-2 input-box">
-                          <label className="cid-label">Company name<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            Company name<span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="text"
                             className="form-control"
@@ -300,7 +302,10 @@ function CompanyProfile() {
                           />
                         </div>
                         <div className="my-2 input-box">
-                          <label className="cid-label">Your Designation<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            Your Designation
+                            <span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="text"
                             className="form-control"
@@ -315,7 +320,9 @@ function CompanyProfile() {
                       </div>
                       <div className="d-flex justify-content-between">
                         <div className="my-2 input-box">
-                          <label className="cid-label">website<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            website<span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="text"
                             className="form-control"
@@ -328,7 +335,9 @@ function CompanyProfile() {
                           />
                         </div>
                         <div className="my-2 input-box">
-                          <label className="cid-label">Address<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            Address<span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="phone"
                             className="form-control"
@@ -343,7 +352,9 @@ function CompanyProfile() {
                       </div>
                       <div className="d-flex justify-content-between">
                         <div className="my-2 input-box">
-                          <label className="cid-label">Country<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            Country<span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="text"
                             className="form-control"
@@ -356,7 +367,9 @@ function CompanyProfile() {
                           />
                         </div>
                         <div className="my-2 input-box">
-                          <label className="cid-label">Domain<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            Domain<span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="text"
                             className="form-control"
@@ -371,7 +384,9 @@ function CompanyProfile() {
                       </div>
                       <div className="d-flex justify-content-between">
                         <div className="my-2 input-box">
-                          <label className="cid-label">City<span className="text-danger"> *</span></label>
+                          <label className="cid-label">
+                            City<span className="text-danger"> *</span>
+                          </label>
                           <input
                             type="text"
                             className="form-control"
@@ -385,7 +400,9 @@ function CompanyProfile() {
                         </div>
                       </div>
                       <div className="my-2">
-                        <label className="cid-label">About Company<span className="text-danger"> *</span></label>
+                        <label className="cid-label">
+                          About Company<span className="text-danger"> *</span>
+                        </label>
                         <textarea
                           className="form-control"
                           style={{ height: "150px" }}
@@ -399,7 +416,7 @@ function CompanyProfile() {
                       </div>
                       <div className="d-flex justify-content-end">
                         <button
-                        type="submit"
+                          type="submit"
                           className="btn-primary-cidblue "
                           style={{ width: "150px" }}
                           // onClick={saveCompanyData}

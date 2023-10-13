@@ -40,14 +40,17 @@ function SignIn() {
       console.warn({ email, password });
       let data = { email, password };
 
-      const response = await fetch(`http://localhost:4000/signIn`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/signIn`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         const apiData = await response.json();
@@ -83,7 +86,10 @@ function SignIn() {
           </div>
           <div className="rounded form">
             <div className="pb-4 Signing-optn d-flex justify-content-between">
-              <Link to="/signup" className="text-decoration-none text-secondary">
+              <Link
+                to="/signup"
+                className="text-decoration-none text-secondary"
+              >
                 <h4>Sign Up</h4>
               </Link>
               <Link to="/signin" className="text-decoration-none">
@@ -92,7 +98,11 @@ function SignIn() {
             </div>
             <div>
               <form>
-                <div className={` my-2 ${error && !validateEmail(email) ? "error-border" : "inputbox"}`}>
+                <div
+                  className={` my-2 ${
+                    error && !validateEmail(email) ? "error-border" : "inputbox"
+                  }`}
+                >
                   <label className="cid-label">Email</label>
                   <br />
                   <input
@@ -108,11 +118,19 @@ function SignIn() {
                   />
                   {error && !validateEmail(email) && (
                     <small>
-                      <span className="error-text text-danger">Invalid email</span>
+                      <span className="error-text text-danger">
+                        Invalid email
+                      </span>
                     </small>
                   )}
                 </div>
-                <div className={` my-2 ${error && !validatePassword(password) ? "error-border" : "inputbox"}`}>
+                <div
+                  className={` my-2 ${
+                    error && !validatePassword(password)
+                      ? "error-border"
+                      : "inputbox"
+                  }`}
+                >
                   <label className="cid-label">Password</label>
                   <br />
                   <input
@@ -128,7 +146,8 @@ function SignIn() {
                   {error && !validatePassword(password) && (
                     <small>
                       <span className="error-text text-danger">
-                        Password must contain 1 number 1 uppercase & lowercase and 8 characters
+                        Password must contain 1 number 1 uppercase & lowercase
+                        and 8 characters
                       </span>
                     </small>
                   )}
@@ -138,7 +157,11 @@ function SignIn() {
                     <p>Forgot Password</p>
                   </Link>
                 </div>
-                <button id="sign" className="p-2 my-3 btn-primary-cidblue w-100" onClick={loginUser}>
+                <button
+                  id="sign"
+                  className="p-2 my-3 btn-primary-cidblue w-100"
+                  onClick={loginUser}
+                >
                   Sign In
                 </button>
               </form>

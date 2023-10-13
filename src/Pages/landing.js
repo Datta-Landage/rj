@@ -36,13 +36,16 @@ function LandingPage() {
 
   async function showAllcandidates() {
     try {
-      const response = await fetch(`http://localhost:4000/getAllProfiles`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/getAllProfiles`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const candidatesData = await response.json();
         console.warn(candidatesData.data);
@@ -66,13 +69,16 @@ function LandingPage() {
 
   async function showAllJobs() {
     try {
-      const response = await fetch(`http://localhost:4000/getAllJobs`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/getAllJobs`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const jobsData = await response.json();
         console.warn(jobsData.data);
@@ -101,7 +107,7 @@ function LandingPage() {
       }
       let data = { jobPostId: jobDataId };
       const response = await fetch(
-        `http://localhost:4000/jobApply/${candidateId}`,
+        `https://api-backend-plum.vercel.app/jobApply/${candidateId}`,
         {
           method: "POST",
           headers: {

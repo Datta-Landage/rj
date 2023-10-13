@@ -240,7 +240,7 @@ function CandidateProfile({ data }) {
   };
 
   //------------------------------------------------------------------------------------------\\
-// profile
+  // profile
   //----------------------------------------Basic Data----------------------------------------\\
 
   const [prefferedRole, setPreferedRole] = useState(data?.prefferedRole);
@@ -282,14 +282,17 @@ function CandidateProfile({ data }) {
       localStorage.setItem("candidateProfile", JSON.stringify(data));
       console.warn(data);
 
-      const response = await fetch(`http://localhost:4000/createProfile`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/createProfile`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       console.warn("In response");
 
       if (response.ok) {
@@ -733,8 +736,9 @@ function CandidateProfile({ data }) {
               {selectedtoolsAndTechnology.length > 0 && (
                 <div className="flex-wrap my-2 selected-skills w-100 d-flex">
                   {selectedtoolsAndTechnology.map((skill, index) => (
-                    <div key={index} 
-                    className="px-1 m-1 rounded selected-skill bg-primary"
+                    <div
+                      key={index}
+                      className="px-1 m-1 rounded selected-skill bg-primary"
                     >
                       {skill}
                       <span

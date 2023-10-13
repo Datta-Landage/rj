@@ -8,7 +8,12 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../utils/routes";
 import { USER_TYPE, useUserInfo } from "../hooks/useUserInfo";
 import { useUserStore } from "../store/useUserStore";
-import { MdLocationOn, MdCurrencyRupee, MdInsertDriveFile, MdApartment } from "react-icons/md";
+import {
+  MdLocationOn,
+  MdCurrencyRupee,
+  MdInsertDriveFile,
+  MdApartment,
+} from "react-icons/md";
 import { GiSuitcase } from "react-icons/gi";
 import { FiUser } from "react-icons/fi";
 import { PiListPlusFill } from "react-icons/pi";
@@ -96,13 +101,16 @@ const AllCandidatesData = () => {
 
   async function showAllcandidates() {
     try {
-      const response = await fetch(`http://localhost:4000/getAllProfiles`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/getAllProfiles`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const candidatesData = await response.json();
         console.warn(candidatesData?.data);
@@ -264,21 +272,21 @@ const AllCandidatesData = () => {
                         <div className="my-5">
                           <h5 className="mx-2 mt-3 fs-5 fw-bold">Roles</h5>
                           <div className="my-2 d-flex flex-wrap ">
-                            {candidatesData.allRoles.map(
-                              (rools, roolIndex) => (
-                                <div
-                                  key={roolIndex}
-                                  className="bg-warning rounded py-2 px-3 m-2 fw-bold"
-                                >
-                                  {rools}
-                                </div>
-                              )
-                            )}
+                            {candidatesData.allRoles.map((rools, roolIndex) => (
+                              <div
+                                key={roolIndex}
+                                className="bg-warning rounded py-2 px-3 m-2 fw-bold"
+                              >
+                                {rools}
+                              </div>
+                            ))}
                           </div>
                         </div>
 
                         <div className="my-5">
-                          <h5 className="mx-2 mt-3 fs-5 fw-bold">Preffered Roles</h5>
+                          <h5 className="mx-2 mt-3 fs-5 fw-bold">
+                            Preffered Roles
+                          </h5>
                           <div className="my-2 d-flex flex-wrap ">
                             {candidatesData.prefferedRole.map(
                               (rools, roolIndex) => (
@@ -300,31 +308,31 @@ const AllCandidatesData = () => {
                           <p className="mx-2 fs-6">{candidatesData?.summary}</p>
                         </div>
                         <div className="summary-box d-flex justify-content-around p-4 rounded">
-                            <div className="d-flex w-25">
-                              <div>
+                          <div className="d-flex w-25">
+                            <div>
                               <MdCurrencyRupee className="mt-1 mx-1" />
-                              </div>
-                              <div className="d-flex flex-wrap">
+                            </div>
+                            <div className="d-flex flex-wrap">
                               {candidatesData?.expectedSalary}
-                              </div>
-                            </div>
-                            <div className="d-flex w-25">
-                              <div>
-                              <MdInsertDriveFile className="mt-1 mx-1" />
-                              </div>
-                              <div className="d-flex flex-wrap">
-                              {candidatesData?.workType.join(', ')}
-                              </div>
-                            </div>
-                            <div className="d-flex w-25">
-                              <div>
-                              <MdApartment className="mt-1 mx-1" />
-                              </div>
-                              <div className="d-flex flex-wrap">
-                              {candidatesData?.workLocation.join(', ')}
-                              </div>
                             </div>
                           </div>
+                          <div className="d-flex w-25">
+                            <div>
+                              <MdInsertDriveFile className="mt-1 mx-1" />
+                            </div>
+                            <div className="d-flex flex-wrap">
+                              {candidatesData?.workType.join(", ")}
+                            </div>
+                          </div>
+                          <div className="d-flex w-25">
+                            <div>
+                              <MdApartment className="mt-1 mx-1" />
+                            </div>
+                            <div className="d-flex flex-wrap">
+                              {candidatesData?.workLocation.join(", ")}
+                            </div>
+                          </div>
+                        </div>
 
                         {/* --------------------------------------------Skills and Tools--------------------------------------------- */}
                         <div className="my-5 mx-2">
@@ -457,8 +465,7 @@ const AllCandidatesData = () => {
                                       >
                                         Date:
                                       </span>
-                                      {allWork?.startDate} -{" "}
-                                      {allWork?.endDate}
+                                      {allWork?.startDate} - {allWork?.endDate}
                                     </p>
                                     <p>
                                       <span
@@ -744,16 +751,16 @@ const AllCandidatesData = () => {
                   <div
                     key={index}
                     role="button"
-                    className={`cid-box m-3 px-4 py-2 tw-cursor-pointer ${selectedCandidate === candidatesData?.candidateId
-                      ? "detailed-box tw-border tw-border-primary"
-                      : ""
-                      }`}
+                    className={`cid-box m-3 px-4 py-2 tw-cursor-pointer ${
+                      selectedCandidate === candidatesData?.candidateId
+                        ? "detailed-box tw-border tw-border-primary"
+                        : ""
+                    }`}
                     style={{ width: "400px", height: "450px" }}
                     onClick={() =>
                       setSelectedCandidate(candidatesData?.candidateId)
                     }
                   >
-
                     <div className="d-flex justify-content-end align-items-center ">
                       <h4>
                         <PiListPlusFill />
@@ -792,18 +799,18 @@ const AllCandidatesData = () => {
                       </div>
                     </div>
 
-
                     <div className="mt-4 d-flex flex-wrap">
-                      {candidatesData.domainSkills.map((domain, domainIndex) => (
-                        <div
-                          key={domainIndex}
-                          className="btn-primary-cidyellow my-2 mx-2" // Adjust the margin as needed (e.g., mx-2)
-                        >
-                          {domain}
-                        </div>
-                      ))}
+                      {candidatesData.domainSkills.map(
+                        (domain, domainIndex) => (
+                          <div
+                            key={domainIndex}
+                            className="btn-primary-cidyellow my-2 mx-2" // Adjust the margin as needed (e.g., mx-2)
+                          >
+                            {domain}
+                          </div>
+                        )
+                      )}
                     </div>
-
 
                     <div className="summary-box p-3 my-2 mx-3 border border-light rounded">
                       <p className="">{candidatesData.summary}</p>
@@ -821,7 +828,6 @@ const AllCandidatesData = () => {
                       (candidate) => candidate.candidateId === selectedCandidate
                     ),
                   ]?.map((candidatesData, index) => (
-
                     <div className="mt-4 w-100 cid-box ">
                       <div className="">
                         {" "}
@@ -955,40 +961,46 @@ const AllCandidatesData = () => {
                           <div className="summary-box d-flex justify-content-around py-3 px-5 border border-light rounded">
                             <div className="d-flex w-25">
                               <div>
-                              <MdCurrencyRupee className="mt-1 mx-1" />
+                                <MdCurrencyRupee className="mt-1 mx-1" />
                               </div>
                               <div className="d-flex flex-wrap">
-                              {candidatesData?.expectedSalary}
+                                {candidatesData?.expectedSalary}
                               </div>
                             </div>
                             <div className="d-flex w-25">
                               <div>
-                              <MdInsertDriveFile className="mt-1 mx-1" />
+                                <MdInsertDriveFile className="mt-1 mx-1" />
                               </div>
                               <div className="d-flex flex-wrap">
-                              {candidatesData?.workType.join(', ')}
+                                {candidatesData?.workType.join(", ")}
                               </div>
                             </div>
                             <div className="d-flex w-25">
                               <div>
-                              <MdApartment className="mt-1 mx-1" />
+                                <MdApartment className="mt-1 mx-1" />
                               </div>
                               <div className="d-flex flex-wrap">
-                              {candidatesData?.workLocation.join(', ')}
+                                {candidatesData?.workLocation.join(", ")}
                               </div>
                             </div>
                           </div>
 
                           {/* --------------------------------------------Skills and Tools--------------------------------------------- */}
                           <div className="my-5 mx-2">
-                            <h5 className=" mt-4 fs-5 fw-bold" style={{ color: "#38349F" }}>
+                            <h5
+                              className=" mt-4 fs-5 fw-bold"
+                              style={{ color: "#38349F" }}
+                            >
                               Skills and Tools
                             </h5>
                             <div className="d-flex justify-content-between">
                               {/* ------------------------------Hard Skills-------------------------------- */}
                               <div className="col-4 px-2">
                                 <div className=" d-flex">
-                                  <h6 className="my-3 fs-5 fw-bold" style={{ color: "#38349F" }}>
+                                  <h6
+                                    className="my-3 fs-5 fw-bold"
+                                    style={{ color: "#38349F" }}
+                                  >
                                     Hard Skills
                                   </h6>
                                 </div>
@@ -1011,7 +1023,10 @@ const AllCandidatesData = () => {
                               {/* ------------------------------------Soft Skills------------------------------------------- */}
                               <div className="col-4 px-2">
                                 <div className=" d-flex">
-                                  <h6 className="my-3 fs-5 fw-bold " style={{ color: "#38349F" }}>
+                                  <h6
+                                    className="my-3 fs-5 fw-bold "
+                                    style={{ color: "#38349F" }}
+                                  >
                                     SoftSkills
                                   </h6>
                                 </div>
@@ -1034,7 +1049,10 @@ const AllCandidatesData = () => {
                               {/* ---------------------------------------------Tools/Technology---------------------------------------------- */}
                               <div className="col-4 px-2">
                                 <div className=" d-flex">
-                                  <h6 className="my-3 fs-5 fw-bold " style={{ color: "#38349F" }}>
+                                  <h6
+                                    className="my-3 fs-5 fw-bold "
+                                    style={{ color: "#38349F" }}
+                                  >
                                     Tools/Technology
                                   </h6>
                                 </div>
@@ -1085,7 +1103,10 @@ const AllCandidatesData = () => {
                                         >
                                           Role:
                                         </span>
-                                        {candidatesData?.workHistory[0]?.jobTitle}
+                                        {
+                                          candidatesData?.workHistory[0]
+                                            ?.jobTitle
+                                        }
                                       </p>
                                       <p>
                                         <span
@@ -1097,7 +1118,10 @@ const AllCandidatesData = () => {
                                         >
                                           Company:
                                         </span>
-                                        {candidatesData?.workHistory[0]?.companyName}
+                                        {
+                                          candidatesData?.workHistory[0]
+                                            ?.companyName
+                                        }
                                       </p>
                                       <p>
                                         <span
@@ -1109,8 +1133,15 @@ const AllCandidatesData = () => {
                                         >
                                           Date:
                                         </span>
-                                        {candidatesData?.workHistory[0]?.startDate} -{" "}
-                                        {candidatesData?.workHistory[0]?.endDate}
+                                        {
+                                          candidatesData?.workHistory[0]
+                                            ?.startDate
+                                        }{" "}
+                                        -{" "}
+                                        {
+                                          candidatesData?.workHistory[0]
+                                            ?.endDate
+                                        }
                                       </p>
                                       <p>
                                         <span
@@ -1122,7 +1153,10 @@ const AllCandidatesData = () => {
                                         >
                                           Description:
                                         </span>
-                                        {candidatesData?.workHistory[0]?.Description}
+                                        {
+                                          candidatesData?.workHistory[0]
+                                            ?.Description
+                                        }
                                       </p>
                                     </div>
                                     // )

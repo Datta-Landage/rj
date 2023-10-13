@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../Pages/Img/CID_logo-01.svg";
-import Logo1 from "../Pages/Img/Logo1.png"
+import Logo1 from "../Pages/Img/Logo1.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import "../Pages/Css/All.css";
 import { useUserStore } from "../store/useUserStore";
@@ -25,7 +25,7 @@ function Header() {
       setUserId(userDatas._id.trim());
       setLogedIn(true);
       getUserAccountInfo();
-      setAccountType(userDatas.accountType)
+      setAccountType(userDatas.accountType);
     }
   }, [userId]);
 
@@ -45,7 +45,7 @@ function Header() {
   async function getUserAccountInfo() {
     try {
       const response = await fetch(
-        `http://localhost:4000/userAccount/${userId}`,
+        `https://api-backend-plum.vercel.app/userAccount/${userId}`,
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ function Header() {
         const userAccountData = await response.json();
         setUserData(userAccountData);
         if (userAccountData.profilePhoto) {
-            setShowImg(true);
+          setShowImg(true);
         }
       } else {
         console.error("Failed to fetch user account info");
@@ -72,10 +72,28 @@ function Header() {
     <div className="tw-z-10">
       <Navbar className="px-5 header-cid text-warning justify-content-between ">
         <div className="logo">
-          <Link to={accountType === "Recruiter" ? "/allcandidates" : (accountType === "Candidate" ? "/allJobs" : "/")}
-           className="text-decoration-none d-flex">
-            <img src={Logo} alt="logo" className="largeLogo" style={{ width: "250px" }} />
-            <img src={Logo1} alt="logo" className="smallLogo" style={{ width: "100px" }} />
+          <Link
+            to={
+              accountType === "Recruiter"
+                ? "/allcandidates"
+                : accountType === "Candidate"
+                ? "/allJobs"
+                : "/"
+            }
+            className="text-decoration-none d-flex"
+          >
+            <img
+              src={Logo}
+              alt="logo"
+              className="largeLogo"
+              style={{ width: "250px" }}
+            />
+            <img
+              src={Logo1}
+              alt="logo"
+              className="smallLogo"
+              style={{ width: "100px" }}
+            />
           </Link>
         </div>
         <div className="nav-button">
@@ -88,19 +106,18 @@ function Header() {
               </div>
               <div>
                 {showImg ? (
-                    <img
+                  <img
                     src={userData.profilePhoto}
                     className="mx-3 rounded-circle"
                     style={{ width: "40px" }}
                   />
                 ) : (
-                    <img
+                  <img
                     src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
                     className="mx-3 rounded-circle"
-                    style={{width: "40px"}}
-                    />
+                    style={{ width: "40px" }}
+                  />
                 )}
-                
               </div>
               <Dropdown>
                 <Dropdown.Toggle variant="" className="text-light">
@@ -142,14 +159,22 @@ function Header() {
           ) : (
             <div>
               <Link to="/Signup">
-                <button className="VanisButton btn-primary-cidwhite my-1 text-decoration-none"
-                style={{width: "120px", marginLeft: "20px"}}>
+                <button
+                  className="VanisButton btn-primary-cidwhite my-1 text-decoration-none"
+                  style={{ width: "120px", marginLeft: "20px" }}
+                >
                   Sign Up
                 </button>
               </Link>
               <Link to="/Signin">
-                <button className="btn-primary-cidyellow text-decoration-none"
-                style={{width: "120px", marginLeft: "20px", minWidth: "60px"}}>
+                <button
+                  className="btn-primary-cidyellow text-decoration-none"
+                  style={{
+                    width: "120px",
+                    marginLeft: "20px",
+                    minWidth: "60px",
+                  }}
+                >
                   Sign in
                 </button>
               </Link>

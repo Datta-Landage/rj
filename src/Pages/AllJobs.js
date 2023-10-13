@@ -25,13 +25,16 @@ const AllJobPosts = () => {
 
   async function showAllJobs() {
     try {
-      const response = await fetch(`http://localhost:4000/getAllJobs`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://api-backend-plum.vercel.app/getAllJobs`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const jobsData = await response.json();
         setFetchedJobsData(jobsData);
@@ -54,7 +57,7 @@ const AllJobPosts = () => {
       let data = { jobPostId: jobDataId };
       console.warn("jjjjjjj", candidateId);
       const response = await fetch(
-        `http://localhost:4000/jobApply/${candidateId}`,
+        `https://api-backend-plum.vercel.app/jobApply/${candidateId}`,
         {
           method: "POST",
           headers: {
@@ -111,7 +114,7 @@ const AllJobPosts = () => {
     try {
       let data = { jobPostId: jobDataId };
       const response = await fetch(
-        `http://localhost:4000/bookmarkJobPost/${candidateId}`,
+        `https://api-backend-plum.vercel.app/bookmarkJobPost/${candidateId}`,
         {
           method: "POST",
           headers: {

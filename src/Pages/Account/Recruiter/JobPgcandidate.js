@@ -26,7 +26,7 @@ function CandidateBtn() {
   async function getAppliedCandidate() {
     try {
       const response = await fetch(
-        `http://localhost:4000/candidatesWhoHasAppliedToJob/651a792d1fc15a18afc504dc`,
+        `https://api-backend-plum.vercel.app/candidatesWhoHasAppliedToJob/651a792d1fc15a18afc504dc`,
         {
           method: "GET",
           headers: {
